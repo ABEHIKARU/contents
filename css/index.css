@@ -1,0 +1,160 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf7fc;
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* ヘッダーコンテナ */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.logo-container {
+    flex-shrink: 0;
+    margin-left: 80px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* メニュー */
+.menu-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* メニューアイテム間のスペース */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu li a:hover {
+    border-bottom: 2px solid #f58fa7; /* ホバー時に下線を表示 */
+}
+
+/* コールトゥアクションボタン */
+.cta-button {
+    background-color: #f58fa7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-right: 80px;
+}
+
+.cta-button:hover {
+    background-color: #f36a8b;
+}
+
+/* タイトル */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* メニューアイテムのスタイル */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.menu-item img {
+    max-width: 170px;
+    height: auto;
+}
+
+/* テキストと矢印を横並びに */
+.text-arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item span {
+    font-size: 1.2rem;
+    color: #333;
+    margin-right: 10px; /* 矢印との間にスペースを作成 */
+}
+
+.menu-item .right_arrow {
+    max-width: 30px;
+    height: auto;
+}
+
+/* メニューのホバー効果 */
+.menu-item:hover {
+    background-color: #ffe6e6; /* 薄いピンク色 */
+}
+
+/* メニューを横に並べる親要素 */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* フッター */
+.footer-container {
+    background-color: rgb(65, 182, 230);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0; /* フッターをページの下部に固定 */
+}
+
+.back-to-top {
+    position: absolute; /* 画像の位置を絶対的に指定 */
+    right: 80px; /* 右端からの距離 */
+    top: 50%; /* 上からの位置を中央に */
+    transform: translateY(-50%); /* 中央揃えのための調整 */
+}
+
+.back-to-top img {
+    width: 40px; /* 画像の幅を指定 */
+    height: auto; /* 高さは自動調整 */
+}
