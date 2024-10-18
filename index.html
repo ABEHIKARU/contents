@@ -5,13 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ささえタイトップページ</title>
     <link rel="stylesheet" href="css/index.css"> <!-- 外部CSSファイルの読み込み -->
-</head>
+
+    <script>
+        // 外部ヘッダー読み込み関数
+        function loadHeader() {
+            fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => console.error('There was a problem with the fetch operation:', error));
+        }
+
+        // ページがロードされた時にヘッダーを読み込む
+        window.onload = function() {
+            loadHeader();
+        };
+    </script>
+    </head>
 <body>
-    <header>
-        <!-- ヘッダー読み込み処理JavaScriptも記述の必要あり -->
-    </header>
+
+    <div id="header"></div>
+
+    <h2>機能一覧</h2>
+
+    <img src="img/nyusya.png" alt="入社" class="nyusya">
+    入社・契約更新
+    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+
+    <img src="img/meisai.png" alt="明細" class="meisai">
+    給与明細の配信
+    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+
+    <img src="img/tetsuduki.png" alt="手続き" class="tetsuduki">
+    手続き申請・承認
+    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+
+    <img src="img/zinzi.png" alt="人事" class="zinzi">
+    人事総務業務
+    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+
     <footer>
-        <!-- フッター読み込み処理JavaScriptも記述の必要あり -->
+        <div id="footer"></div>
     </footer>
 </body>
 </html>
