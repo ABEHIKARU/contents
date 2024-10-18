@@ -8,7 +8,7 @@
 
 .logo-container {
     flex-shrink: 0;
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 .logo {
@@ -35,6 +35,11 @@
     color: #333;
     font-size: 16px;
     font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu li a:hover {
+    border-bottom: 2px solid #f58fa7; /* ホバー時に下線を表示 */
 }
 
 .cta-button {
@@ -46,7 +51,7 @@
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    margin-right: 50px;
+    margin-right: 80px;
 }
 
 .cta-button:hover {
