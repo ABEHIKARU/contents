@@ -76,7 +76,7 @@ body {
 
 /* メインロゴのスタイル */
 .main_logo {
-    width: 500px;
+    width: 450px;
     height: auto; /* 縦横比を維持 */
     margin-top: 50px;
     margin-left: 200px;
@@ -84,7 +84,7 @@ body {
 
 .key_container {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
 }
 
 .left_column {
@@ -96,13 +96,13 @@ body {
 
 .main_content {
     flex-basis: 50%; /* 右側に1段分を配置 */
-    margin-left: 50px; /* 左側と右側のスペースを確保 */
+    margin-right: 100px; /* 左側と右側のスペースを確保 */
 }
 
 .tagline {
     font-size: 1.5em;
     line-height: 1.5;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 250px;
 }
 
@@ -135,7 +135,7 @@ body {
 .main_capture {
     width: 90%;
     height: auto;
-    padding-right: 50px;
+    margin-right: 50px;
 }
 
 
@@ -143,6 +143,7 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 120px;
     font-size: 2rem;
     color: #333;
 }
@@ -197,6 +198,63 @@ h2 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.form-title {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    margin-top: 50px;
+}
+.form-title img{
+    margin-right: 10px;
+    object-fit: contain;
+    width: 250px;
+}
+
+.form-title2 {
+    text-align: center;
+    font-size: x-large;
+}
+.form-title2 p {
+    margin-top: 0px;
+}
+
+.form-title2 img {
+    width: 50%;
+    height: auto;
+}
+
+.form-container {
+    display: flex;
+    gap: 10px; /* 各要素の間にスペースを追加 */
+    justify-content: center;
+}
+
+.form-item {
+    background-color: white; /* 背景色を白に設定 */
+    border: 2px solid lightgray; /* グレーの枠線を設定 */
+    border-radius: 10px; /* 角を丸くする */
+    padding: 20px ; /* 内側の余白を追加 */
+    text-align: center; /* 中央揃え */
+    width: 250px; 
+}
+
+.form-item img {
+    width: 200px; /* 画像の幅を設定 */
+    height: auto; /* 画像のアスペクト比を維持 */
+    margin-top: 10px; /* テキストとの間に余白を追加 */
+}
+
+.form_cta-button {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.form_cta-button .cta-button {
+    font-size: 20px;
+    margin: 0px;
+    padding: 15px 20px;
 }
 
 /* 企業情報のスタイル */
