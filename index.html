@@ -19,14 +19,14 @@
             <!-- メニュー -->
             <nav class="menu-container">
                 <ul class="menu">
-                    <li><a href="#">ささえタイとは</a></li>
-                    <li><a href="#">機能一覧</a></li>
-                    <li><a href="#">企業情報</a></li>
+                    <li><a href="#sasaetaitoha">ささえタイとは</a></li>
+                    <li><a href="#kinouichiran">機能一覧</a></li>
+                    <li><a href="#kigyouzyouhou">企業情報</a></li>
                 </ul>
             </nav>
 
             <!-- 資料請求・お問い合わせボタン -->
-            <a href="#" class="cta-button">資料請求・お問い合わせ</a>
+            <a href="sendform.html" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
         </div>
     </header>
 
@@ -41,7 +41,7 @@
             </p>
             <div class="campaign">
                 <img src="img/campaign.png" alt="キャンペーン実施中" class="campaign_img"><br>
-                <a href="#" class="main_cta-button">資料請求・お問い合わせ</a>
+                <a href="sendform.html" target="_blank" class="main_cta-button">資料請求・お問い合わせ</a>
             </div>
         </div>
         <div class="main_content">
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <h2>ささえタイとは</h2>
+    <h2 id="sasaetaitoha">ささえタイとは</h2>
 
     <div class="sasaetai_logo-container">
         <img src="img/logo.png" alt="ささえタイのロゴ" class="sasaetai_logo">
@@ -85,39 +85,47 @@
     </div>
 
 
-    <h2>機能一覧</h2>
+    <h2 id="kinouichiran">機能一覧</h2>
 
     <div class="menu-container">
         <div class="menu-item">
-            <img src="img/nyusya.png" alt="入社">
-            <div class="text-arrow-container">
-                <span>入社・契約更新</span>
-                <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
-            </div>
+            <a href="contract.html" class="menu-link">
+                <img src="img/nyusya.png" alt="入社">
+                <div class="text-arrow-container">
+                    <span>入社・契約更新</span>
+                    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+                </div>
+            </a>
         </div>
 
         <div class="menu-item">
-            <img src="img/meisai.png" alt="明細">
-            <div class="text-arrow-container">
-                <span>給与明細の配信</span>
-                <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
-            </div>
+            <a href="salary.html" class="menu-link">
+                <img src="img/meisai.png" alt="明細">
+                <div class="text-arrow-container">
+                    <span>給与明細の配信</span>
+                    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+                </div>
+            </a>
         </div>
 
         <div class="menu-item">
-            <img src="img/tetsuduki.png" alt="手続き">
-            <div class="text-arrow-container">
-                <span>手続き申請・承認</span>
-                <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
-            </div>
+            <a href="procedure.html" class="menu-link">
+                <img src="img/tetsuduki.png" alt="手続き">
+                <div class="text-arrow-container">
+                    <span>手続き申請・承認</span>
+                    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+                </div>
+            </a>
         </div>
 
         <div class="menu-item">
-            <img src="img/zinzi.png" alt="人事">
-            <div class="text-arrow-container">
-                <span>人事総務業務</span>
-                <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
-            </div>
+            <a href="business.html" class="menu-link">
+                <img src="img/zinzi.png" alt="人事">
+                <div class="text-arrow-container">
+                    <span>人事総務業務</span>
+                    <img src="img/right_arrow.png" alt="右矢印" class="right_arrow">
+                </div>
+            </a>
         </div>
     </div>
 
@@ -147,24 +155,24 @@
     </div>
     
     <div class="form_cta-button">
-        <a href="#" class="cta-button">資料請求・お問い合わせ</a>
+        <a href="sendform.html" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
     </div>
 
-    <h2>企業情報</h2>
+    <h2 id="kigyouzyouhou">企業情報</h2>
     <div class="company-info">
         <img src="img/nips_logo.png" alt="企業ロゴマーク" class="nips_logo">
         <div class="text-container">
             <p>開発・サポート<br>株式会社ニップスシステムセンター</p>
-            <a href="コーポレートサイトのURL">コーポレートサイト</a>
-            <a href="会社概要のURL">会社概要</a>
+            <a href="https://www.nipssc.co.jp/index.html" target="_blank">コーポレートサイト</a>
+            <a href="https://www.nipssc.co.jp/company.html" target="_blank">会社概要</a>
         </div>
     </div>
 
     <footer>
         <div class="footer-container">
             copyright©2024&nbsp;NIPS Co.,Ltd.&nbsp;all&nbsp;rights&nbsp;reserved.
-            <a href="#" class="back-to-top">
-                <img src="img/up_arrow.png" alt="トップへ戻る" />
+            <a class="pagetop" href="#">
+                <img src="img/up_arrow.png" alt="トップへ戻る" class="up_arrow">
             </a>
         </div>
     </footer>

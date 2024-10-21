@@ -1,8 +1,12 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 /* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
     background-color: #eaf7fc;
-    margin: 0;
+    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
     padding: 0;
     min-height: 100vh; /* 最小の高さを設定 */
     /* display: flex;  */
@@ -18,6 +22,11 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #ffffff;
+    position: fixed; /* ヘッダーを固定 */
+    top: 0; /* 画面の上部に配置 */
+    left: 0; /* 左側に配置 */
+    right: 0; /* 右側にも配置 */
+    z-index: 1000; /* 他の要素の上に表示 */
 }
 
 .logo-container {
@@ -73,6 +82,7 @@ body {
 .cta-button:hover {
     background-color: #f36a8b;
 }
+
 
 /* メインロゴのスタイル */
 .main_logo {
@@ -237,9 +247,14 @@ h2 {
     box-sizing: border-box;
 }
 
+.menu-link {
+    text-decoration: none;
+}
+
 .menu-item img {
     max-width: 170px;
     height: auto;
+    margin-bottom: 15px;
 }
 
 /* テキストと矢印を横並びに */
@@ -375,13 +390,13 @@ h2 {
     position: relative;
 }
 
-.back-to-top {
+.pagetop {
     position: absolute; /* 画像の位置を絶対的に指定 */
     right: 80px; /* 右端からの距離 */
     transform: translateY(-20%);
 }
 
-.back-to-top img {
+.pagetop img {
     width: 40px; /* 画像の幅を指定 */
     height: auto;
 }
