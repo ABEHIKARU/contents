@@ -104,19 +104,17 @@ body {
     font-size: 18px;
     color: #666;
     margin-top: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     text-align: left ; /* テキストを左揃え */
-    padding-left: 28%; /* テキスト全体を30px右に移動 */
+    padding-left: 24%; /* テキスト全体を30px右に移動 */
 }
 
 /* ステップのレイアウト */
-
 .steps {
     display: flex;
     justify-content: flex-start; /* 左揃え */
     align-items: flex-start; /* 上部揃えで位置を調整 */
     margin-top: 40px;
-    gap: 40px; /* 要素間の余白 */
     padding-left: 0px; /* ステップ全体を少し左に移動 */
 }
 
@@ -135,18 +133,24 @@ body {
     white-space: nowrap; /* 改行を防ぐ */
     overflow: hidden;
     text-overflow: ellipsis; /* テキストが長すぎる場合は「...」を表示 */
-    padding-left: 0px; /* p要素を左にずらす */
+    padding-left: -0px; /* p要素を左にずらす */
     font-weight: bold; /* テキストを濃くする */
 }
-
-
-
+.step p2 {
+    margin-bottom: 10px; /* 画像とテキストの間に少し余白を設定 */
+    margin-top: 0; /* 上の余白はなし */
+    white-space: nowrap; /* 改行を防ぐ */
+    overflow: hidden;
+    text-overflow: ellipsis; /* テキストが長すぎる場合は「...」を表示 */
+    padding-left: 50px; /* p要素を左にずらす */
+    font-weight: bold; /* テキストを濃くする */
+}
 /* 画像サイズを個別に調整可能にする */
 .step img {
     width: 100%; /* 幅を親要素に合わせて調整 */
     height: auto; /* 高さをアスペクト比を維持しながら自動調整 */
-    max-width: 300px; /* 必要に応じて最大幅を設定 */
-    max-height: 400px; /* 必要に応じて最大高さを設定 */
+    max-width: 200px; /* 必要に応じて最大幅を設定 */
+    max-height: 300px; /* 必要に応じて最大高さを設定 */
     margin-top: 10px; /* 画像の上に少し余白を設定 */
 }
 
@@ -155,7 +159,7 @@ body {
     width: 140px; /* 矢印の幅を初期値として設定 */
     height: 120px; /* 高さは自動調整 */
     display: block;
-    margin: 30px 0 30px 30px; /* 矢印の左右に余白を追加 */
+    margin: 30px 0 0 -30px; /* 矢印の左右に余白を追加 */
     padding: 0; /* 矢印の余白をリセット */
     max-width: 140px; /* 最大幅 */
     max-height: 120px; /* 最大高さ */
@@ -163,18 +167,24 @@ body {
 
 /* 矢印のサイズを個別に拡大可能に */
 .arrow img {
-    width: 150%; /* 親要素に合わせて幅を調整 */
+    width: 100%; /* 親要素に合わせて幅を調整 */
     height: auto; /* 高さをアスペクト比に基づいて自動調整 */
     max-width: 100px; /* 必要に応じて最大幅を設定 */
     max-height: 100px; /* 必要に応じて最大高さを設定 */
 }
 
-/* 画像サイズを統一するためのスタイル */
-.image-standard {
-    width: 200px; /* 画像の幅を200pxに統一 */
-    height: auto; /* 高さは自動調整 */
+/* .steps内の.image-standardのみを対象とする */
+.steps .image-standard {
+    width: 200px; /* 画像の幅を250pxに統一 */
+    height: 200px; /* 画像の高さを200pxに統一 */
     object-fit: contain; /* アスペクト比を維持しながら表示 */
-    margin: 10px; /* 画像間に余白を追加 */
+    padding-left: 50px; /* p要素を左にずらす */
+}
+.steps .image-standard2 {
+    width: 200px; /* 画像の幅を250pxに統一 */
+    height: 200px; /* 画像の高さを200pxに統一 */
+    object-fit: contain; /* アスペクト比を維持しながら表示 */
+    padding-left: 30px; /* p要素を左にずらす */
 }
 /* フッター */
 .footer-container {
