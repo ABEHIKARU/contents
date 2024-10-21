@@ -84,7 +84,7 @@ body {
 
 .key_container {
     display: flex;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 }
 
 .left_column {
@@ -139,12 +139,84 @@ body {
 }
 
 
+/* ささえタイとはのスタイル */
+.sasaetai_logo-container {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+.sasaetai_logo-container img{
+    margin-right: 10px;
+    object-fit: contain;
+    width: 170px;
+}
+.function-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.function-container table {
+    border-collapse: separate; /* セルの間にスペースを確保 */
+    border-spacing: 10px; /* セルの間に適度なスペースを追加 */
+}
+
+.function-container td {
+    background-color: #f58fa7; /* 背景色を薄ピンクに設定 */
+    color: white; /* 文字色を白に設定 */
+    width: 145px;
+    padding: 10px; /* セル内に余白を追加 */
+    border-radius: 5px; /* 角を丸く設定 */
+    font-size: large;
+    text-align: center; /* テキストを中央揃え */
+    font-weight: bold; /* 文字を太字に設定 */
+}
+
+.function-container p {
+    margin-left: 10px;
+    margin-top: 50px;
+    font-size: large;
+}
+.function-container span{
+    background-color: #afe0f3;
+}
+
+.function {
+    display: block; /* 画像をブロック要素として扱う */
+    margin: 0 auto; /* 左右のマージンを自動にして中央揃え */
+}
+.function-video-container {
+    display: flex;
+    gap: 20px; /* 画像・動画とテキストの間に余白を設定 */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.function-video-container span {
+    background-color: #afe0f3;
+}
+
+.function-video {
+    display: flex;
+    flex-direction: column; /* 画像と動画を上下に配置 */
+    padding-left: 250px;
+}
+.function-video img {
+    width: 70%; /* 画像がiframeの幅に揃うようにする */
+    height: auto; /* 画像のアスペクト比を保持する */
+    margin-left: 20px;
+}
+.function-video-container p {
+    flex: 1; /* テキストを右側に広がるように設定 */
+    font-size:larger;
+    margin-top: 170px;
+    margin-left: -100px;
+}
+
+
 /* タイトル */
 h2 {
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 120px;
-    font-size: 2rem;
+    margin-top: 100px;
     color: #333;
 }
 
@@ -204,7 +276,7 @@ h2 {
     display: flex;
     justify-content: center;
     font-size: x-large;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .form-title img{
     margin-right: 10px;
@@ -266,6 +338,7 @@ h2 {
     padding: 20px; /* 内側の余白 */
     align-items: center; /* 中央揃え */
     margin: 20px 480px; /* 上下に余白を追加 */
+    margin-bottom: 100px;
 }
 
 /* 企業ロゴのスタイル */
@@ -305,8 +378,7 @@ h2 {
 .back-to-top {
     position: absolute; /* 画像の位置を絶対的に指定 */
     right: 80px; /* 右端からの距離 */
-    bottom: 20px; /* ページ下部に配置 */
-    transform: translateY(-50%);
+    transform: translateY(-20%);
 }
 
 .back-to-top img {
