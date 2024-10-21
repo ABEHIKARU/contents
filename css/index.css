@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh; /* 最小の高さを設定 */
-    display: flex; /* フレックスボックスを使用 */
+    /* display: flex;  */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -142,7 +142,7 @@ h2 {
     border-radius: 10px; /* 角を丸くする */
     padding: 20px; /* 内側の余白 */
     align-items: center; /* 中央揃え */
-    margin: 20px 0; /* 上下に余白を追加 */
+    margin: 20px 480px; /* 上下に余白を追加 */
 }
 
 /* 企業ロゴのスタイル */
@@ -182,11 +182,11 @@ h2 {
 .back-to-top {
     position: absolute; /* 画像の位置を絶対的に指定 */
     right: 80px; /* 右端からの距離 */
-    top: 50%; /* 上からの位置を中央に */
-    transform: translateY(-50%); /* 中央揃えのための調整 */
+    /* top: 50%;  */
+    transform: translateY(-20%); /* 中央揃えのための調整 */
 }
 
 .back-to-top img {
     width: 40px; /* 画像の幅を指定 */
-    height: auto; /* 高さは自動調整 */
+    height: auto;
 }
