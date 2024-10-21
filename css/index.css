@@ -74,6 +74,71 @@ body {
     background-color: #f36a8b;
 }
 
+/* メインロゴのスタイル */
+.main_logo {
+    width: 500px;
+    height: auto; /* 縦横比を維持 */
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+.key_container {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.left_column {
+    flex-basis: 50%; /* 左側の幅を50%に設定 */
+    display: flex;
+    flex-direction: column; /* 左側を上下に積み重ね */
+    justify-content: space-between; /* 左側の要素を上下に配置 */
+}
+
+.main_content {
+    flex-basis: 50%; /* 右側に1段分を配置 */
+    margin-left: 50px; /* 左側と右側のスペースを確保 */
+}
+
+.tagline {
+    font-size: 1.5em;
+    line-height: 1.5;
+    margin-top: 50px;
+    margin-left: 250px;
+}
+
+.campaign {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.campaign_img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-left: 150px;
+}
+.main_cta-button{
+    background-color: #f58fa7;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 150px;
+}
+.main_cta-button:hover {
+    background-color: #f36a8b;
+}
+
+.main_capture {
+    width: 90%;
+    height: auto;
+    padding-right: 50px;
+}
+
+
 /* タイトル */
 h2 {
     text-align: center;
@@ -160,8 +225,7 @@ h2 {
 
 /* リンクのスタイル */
 .text-container a {
-    text-decoration: none; /* 下線を削除 */
-    color: #007BFF; /* リンクの色 */
+    color: #7d7d7d; /* リンクの色 */
     transition: color 0.3s ease; /* ホバー時の変化にスムーズなトランジション */
 }
 
@@ -177,13 +241,14 @@ h2 {
     padding: 20px;
     width: 100%; /* 幅を100%に設定 */
     box-sizing: border-box; /* パディングを含めた幅の計算 */
+    position: relative;
 }
 
 .back-to-top {
     position: absolute; /* 画像の位置を絶対的に指定 */
     right: 80px; /* 右端からの距離 */
-    /* top: 50%;  */
-    transform: translateY(-20%); /* 中央揃えのための調整 */
+    bottom: 20px; /* ページ下部に配置 */
+    transform: translateY(-50%);
 }
 
 .back-to-top img {
