@@ -1,0 +1,39 @@
+/* 全体のリセット */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.steps {
+    display: flex;
+    justify-content: center; /* 中央に揃える */
+    align-items: center;
+    margin-top: 40px;
+    gap: 40px; /* 要素間の間隔を調整 */
+}
+
+.step {
+    text-align: center;
+    width: 25%; /* 幅を少し広げて間隔を調整 */
+}
+
+.arrow {
+    width: 60px; /* 矢印の幅を大きく設定 */
+    height: auto;
+}
+
+/* 矢印画像のスタイル */
+.arrow img {
+    width: 25px; /* 元の半分以下に縮小 */
+    height: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 画像のサイズを統一 */
+.step img {
+    width: 120px; /* 画像の幅を大きく設定 */
+    height: auto;
+}
