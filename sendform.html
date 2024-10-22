@@ -36,23 +36,23 @@
         <tr>
             <td>氏名(漢字)&nbsp;<img src="img/hissu.png"></td>
             <td>
-                <input type="text" id="name_sei" name="name_sei" placeholder="姓">
-                <input type="text" id="name_mei" name="name_mei" placeholder="名">
+                <input type="text" id="name_sei" name="name_sei" placeholder="姓" maxlength="20">
+                <input type="text" id="name_mei" name="name_mei" placeholder="名" maxlength="20">
             </td>
         </tr>
         
         <tr>
             <td>氏名(フリガナ)&nbsp;<img src="img/hissu.png"></td>
             <td>
-                <input type="text" id="kana_name_sei" name="kana_name_sei" placeholder="セイ">
-                <input type="text" id="kana_name_mei" name="kana_name_mei" placeholder="メイ">
+                <input type="text" id="kana_name_sei" name="kana_name_sei" placeholder="セイ" maxlength="20">
+                <input type="text" id="kana_name_mei" name="kana_name_mei" placeholder="メイ" maxlength="20">
             </td>
         </tr>
 
         <tr>
             <td>会社名&nbsp;<img src="img/hissu.png"></td>
             <td>
-                <input type="text" id="com_name" name="com_name">
+                <input type="text" id="com_name" name="com_name" maxlength="100">
             </td>
         </tr>
 
@@ -68,22 +68,22 @@
         <tr>
             <td>メールアドレス&nbsp;<img src="img/hissu.png"></td>
             <td>
-                <input type="email" id="email" name="email" placeholder="form@example.com">
+                <input type="email" id="email" name="email" placeholder="form@example.com" maxlength="100">
             </td>
         </tr>
 
         <tr>
             <td>利用予定人数&nbsp;<img src="img/hissu.png"></td>
             <td>
-                <input type="text" id="people_num" name="people_num">人
-                ※おおよその人数で構いません
+                <input type="text" id="people_num" name="people_num" maxlength="10">人
+                <span>※おおよその人数で構いません</span>
             </td>
         </tr>
 
         <tr>
             <td>お問い合わせ内容&nbsp;<img src="img/hissu.png"></td>
             <td>
-                <input type="text" id="inquiry_detail" name="inquiry_detail">
+                <textarea id="inquiry_detail" name="inquiry_detail" maxlength="2000"></textarea>
             </td>
         </tr>
     </table>

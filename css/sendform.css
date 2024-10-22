@@ -87,6 +87,7 @@ body {
 h2{
     text-align: center;
     margin-top: 120px;
+    margin-bottom: 20px;
 }
 img{
     width: 25px;
@@ -95,10 +96,39 @@ img{
 table{
     display: flex;
     justify-content: center;
+    margin: 20px;
+    border-collapse: separate;
+    border-spacing: 10px;
 }
 table td:first-child {
     text-align: right;
     padding-right: 10px; /* テキストと次の列との間にスペースを追加 */
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea{
+    border: 1px solid #4b4b4b;
+    border-radius: 8px; /* 角丸を適用 */
+    padding: 8px;
+    font-size: 14px;
+}
+#com_name, #email{
+    width: 370px;
+}
+#tel_num{
+    width: 105px;
+}
+textarea {
+    width: 370px;
+    height: 160px;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+    color: #aaa;
+}
+span{
+    font-size: small;
 }
 .form-button{
     text-align: center;
