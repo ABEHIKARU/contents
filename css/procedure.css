@@ -18,6 +18,11 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #ffffff;
+    position: fixed; /* ヘッダーを固定 */
+    top: 0; /* 画面の上部に配置 */
+    left: 0; /* 左側に配置 */
+    right: 0; /* 右側にも配置 */
+    z-index: 1000; /* 他の要素の上に表示 */
 }
 
 .logo-container {
@@ -78,7 +83,7 @@ body {
 /* メインコンテンツのスタイル */
 .main-content {
     max-width: 1200px; /* メインコンテンツの最大幅を設定 */
-    margin: 0 auto; /* 左右の余白を自動にして中央揃え */
+    margin: 80px auto 0; /* 上部に150pxの余白を追加してヘッダーとの間隔を確保 */
     text-align: center; /* 全体を中央揃え */
     padding: 50px 20px;
 }
@@ -86,18 +91,19 @@ body {
 /* 見出しのスタイル */
 .main-content h1 {
     background-color: #87ceeb;
-    padding: 10px;
+    padding: 10px 40px; /* 左右に20pxの余白を追加 */
     border-radius: 5px;
     color: white;
     display: inline-block;
-    text-align: center; /* 見出しも中央揃え */
+    text-align: center;
+    font-family: 'BIZ UDPゴシック', Arial, sans-serif; /* BIZ UDPゴシックに変更 */
 }
 
 .main-content h2 {
-    font-size: 24px;
+    font-size: 28px; /* 文字サイズを少し大きくする */
     margin-top: 40px;
     color: #666;
-    text-align: center; /* 見出しも中央揃え */
+    text-align: center;
 }
 
 .main-content p {
@@ -180,7 +186,7 @@ body {
     width: 200px; /* 画像の幅を250pxに統一 */
     height: 200px; /* 画像の高さを200pxに統一 */
     object-fit: contain; /* アスペクト比を維持しながら表示 */
-    padding-left: 0px; /* p要素を左にずらす */
+    
 }
 /* フッター */
 .footer-container {
@@ -188,19 +194,18 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
-    width: 100vw; /* ビューポート全体の幅に設定 */
-    position: relative; /* 他の要素に影響されずに配置 */
-    left: 0; /* 左端に揃える */
+    width: 100%; /* 幅を100%に設定 */
     box-sizing: border-box; /* パディングを含めた幅の計算 */
+    position: relative;
 }
 
-.back-to-top {
+.pagetop {
     position: absolute; /* 画像の位置を絶対的に指定 */
     right: 80px; /* 右端からの距離 */
-    transform: translateY(-20%); /* 中央揃えのための調整 */
+    transform: translateY(-20%);
 }
 
-.back-to-top img {
+.pagetop img {
     width: 40px; /* 画像の幅を指定 */
     height: auto;
 }

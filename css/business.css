@@ -80,9 +80,10 @@ body {
 }
 
 /* メインコンテンツのスタイル */
+/* メインコンテンツのスタイル */
 .main-content {
     max-width: 1200px; /* メインコンテンツの最大幅を設定 */
-    margin: 80px auto 0; /* 上部に100pxの余白を追加 */
+    margin: 80px auto 0; /* 上部に150pxの余白を追加してヘッダーとの間隔を確保 */
     text-align: center; /* 全体を中央揃え */
     padding: 50px 20px;
 }
@@ -90,7 +91,7 @@ body {
 /* 見出しのスタイル */
 .main-content h1 {
     background-color: #87ceeb;
-    padding: 10px 100px; /* 上下に10px、左右に20pxの余白を追加 */
+    padding: 10px 20px; /* 左右に20pxの余白を追加 */
     border-radius: 5px;
     color: white;
     display: inline-block;
@@ -99,19 +100,10 @@ body {
 }
 
 .main-content h2 {
-    font-size: 30px; /* 文字サイズを大きくする */
+    font-size: 30px; /* 文字サイズを少し大きくする */
     margin-top: 40px;
     color: #666;
     text-align: center; /* 見出しも中央揃え */
-}
-
-.main-content p {
-    font-size: 21px;
-    color: #666;
-    margin-top: 40px;
-    margin-bottom: 60px;
-    text-align: left ; /* テキストを左揃え */
-    padding-left: 19%; /* テキスト全体を30px右に移動 */
 }
 
 /* ステップのレイアウト */
@@ -150,47 +142,80 @@ body {
     padding-left: 50px; /* p要素を左にずらす */
     font-weight: bold; /* テキストを濃くする */
 }
-/* 画像サイズを個別に調整可能にする */
-.step img {
-    width: 100%; /* 幅を親要素に合わせて調整 */
-    height: auto; /* 高さをアスペクト比を維持しながら自動調整 */
-    max-width: 200px; /* 必要に応じて最大幅を設定 */
-    max-height: 300px; /* 必要に応じて最大高さを設定 */
-    margin-top: 10px; /* 画像の上に少し余白を設定 */
+
+/* 全体レイアウトを管理する親コンテナ */
+.notice-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    padding: 20px;
 }
 
-/* 矢印のスタイル（個別に調整可能に） */
-.arrow {
-    width: 140px; /* 矢印の幅を初期値として設定 */
-    height: 120px; /* 高さは自動調整 */
-    display: block;
-    margin: 30px 0 0 -30px; /* 矢印の左右に余白を追加 */
-    padding: 0; /* 矢印の余白をリセット */
-    max-width: 140px; /* 最大幅 */
-    max-height: 120px; /* 最大高さ */
+/* 上段の要素を3つ並べる */
+.upper-row {
+    display: flex;
+    justify-content: space-between; /* 要素を均等に配置 */
+    gap: 40px;
 }
 
-/* 矢印のサイズを個別に拡大可能に */
-.arrow img {
-    width: 100%; /* 親要素に合わせて幅を調整 */
-    height: auto; /* 高さをアスペクト比に基づいて自動調整 */
-    max-width: 100px; /* 必要に応じて最大幅を設定 */
-    max-height: 100px; /* 必要に応じて最大高さを設定 */
+/* 下段の要素を2つ並べる */
+.lower-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-/* .steps内の.image-standardのみを対象とする */
-.steps .image-standard {
-    width: 200px; /* 画像の幅を250pxに統一 */
-    height: 200px; /* 画像の高さを200pxに統一 */
-    object-fit: contain; /* アスペクト比を維持しながら表示 */
-    padding-left: 50px; /* p要素を左にずらす */
+/* 各notice-boardのスタイル */
+.notice-board {
+    width: 260px;
+    height: 200px;
+    border: 3px solid #f4aaaa; /* 枠線の色 */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつける */
+    position: relative;
 }
-.steps .image-standard2 {
-    width: 200px; /* 画像の幅を250pxに統一 */
-    height: 200px; /* 画像の高さを200pxに統一 */
-    object-fit: contain; /* アスペクト比を維持しながら表示 */
-    padding-left: 30px; /* p要素を左にずらす */
+
+/* ヘッダーのスタイル */
+.notice-header {
+    background-color: #fce1e1;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 5px; /* 角を少し丸くする */
+    border: 3px solid #f4aaaa; /* 枠線の色 */
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* 改行を防ぐ */
 }
+
+/* コンテンツのスタイル */
+.notice-body {
+    color: #333;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.notice-body p {
+    white-space: nowrap;
+    font-size: 14px;
+    color: #333;
+    margin-top: 0px;
+}
+
+.notice-body img {
+    width: 170px;
+    height: 110px;
+    margin-top: 5px;
+}
+
 /* フッター */
 .footer-container {
     background-color: rgb(65, 182, 230);

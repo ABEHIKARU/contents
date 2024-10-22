@@ -18,6 +18,11 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #ffffff;
+    position: fixed; /* ヘッダーを固定 */
+    top: 0; /* 画面の上部に配置 */
+    left: 0; /* 左側に配置 */
+    right: 0; /* 右側にも配置 */
+    z-index: 1000; /* 他の要素の上に表示 */
 }
 
 .logo-container {
@@ -74,39 +79,40 @@ body {
     background-color: #f36a8b;
 }
 
-
 /* メインコンテンツのスタイル */
 .main-content {
     max-width: 1200px; /* メインコンテンツの最大幅を設定 */
-    margin: 0 auto; /* 左右の余白を自動にして中央揃え */
+    margin: 80px auto 0; /* 上部に80pxの余白を追加 */
     text-align: center; /* 全体を中央揃え */
     padding: 50px 20px;
 }
 
 /* 見出しのスタイル */
 .main-content h1 {
+    margin-top: 20px;
     background-color: #87ceeb;
-    padding: 10px;
+    padding: 10px 40px; /* 上下に10px、左右に20pxの余白を追加 */
     border-radius: 5px;
     color: white;
     display: inline-block;
     text-align: center; /* 見出しも中央揃え */
+    font-family: 'BIZ UDPゴシック', Arial, sans-serif; /* BIZ UDPゴシックに変更 */
 }
 
 .main-content h2 {
-    font-size: 24px;
+    font-size: 30px; /* 文字サイズを大きくする */
     margin-top: 40px;
     color: #666;
     text-align: center; /* 見出しも中央揃え */
 }
 
 .main-content p {
-    font-size: 18px;
+    font-size: 21px;
     color: #666;
     margin-top: 40px;
     margin-bottom: 80px;
     text-align: left ; /* テキストを左揃え */
-    padding-left: 28%; /* テキスト全体を30px右に移動 */
+    padding-left: 24%; /* テキスト全体を30px右に移動 */
 }
 
 /* ステップのレイアウト */
@@ -145,7 +151,7 @@ body {
 .step img {
     width: 100%; /* 幅を親要素に合わせて調整 */
     height: auto; /* 高さをアスペクト比を維持しながら自動調整 */
-    max-width: 300px; /* 必要に応じて最大幅を設定 */
+    max-width: 400px; /* 必要に応じて最大幅を設定 */
     max-height: 400px; /* 必要に応じて最大高さを設定 */
     margin-top: 10px; /* 画像の上に少し余白を設定 */
 }
@@ -184,16 +190,16 @@ body {
     padding: 20px;
     width: 100%; /* 幅を100%に設定 */
     box-sizing: border-box; /* パディングを含めた幅の計算 */
+    position: relative;
 }
 
-.back-to-top {
+.pagetop {
     position: absolute; /* 画像の位置を絶対的に指定 */
     right: 80px; /* 右端からの距離 */
-    /* top: 50%;  */
-    transform: translateY(-20%); /* 中央揃えのための調整 */
+    transform: translateY(-20%);
 }
 
-.back-to-top img {
+.pagetop img {
     width: 40px; /* 画像の幅を指定 */
     height: auto;
 }
