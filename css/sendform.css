@@ -7,8 +7,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: #eaf7fc;
     margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
     padding: 0;
-    min-height: 100vh; /* 最小の高さを設定 */
+    /* min-height: 100vh;  */
     /* display: flex;  */
     flex-direction: column;
     align-items: center;
@@ -87,6 +90,7 @@ body {
 h2{
     text-align: center;
     margin-top: 120px;
+    margin-bottom: 20px;
 }
 img{
     width: 25px;
@@ -95,16 +99,43 @@ img{
 table{
     display: flex;
     justify-content: center;
+    margin: 20px;
+    border-collapse: separate;
+    border-spacing: 10px;
 }
 table td:first-child {
     text-align: right;
     padding-right: 10px; /* テキストと次の列との間にスペースを追加 */
 }
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea{
+    border: 1px solid #4b4b4b;
+    border-radius: 8px; /* 角丸を適用 */
+    padding: 8px;
+    font-size: 14px;
+}
+#com_name, #email, #tel_num{
+    width: 370px;
+}
+
+textarea {
+    width: 370px;
+    height: 160px;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+    color: #aaa;
+}
+span{
+    font-size: small;
+}
 .form-button{
     text-align: center;
     margin-top: 20px;
 }
-.form-button input[type="button"] {
+.form-button input[type="submit"] {
     background-color: #8faadc; /* 青背景 */
     color: #000; /* 黒文字 */
     border: none; /* 枠線なし */
@@ -126,10 +157,11 @@ table td:first-child {
     background-color: rgb(65, 182, 230);
     color: white;
     text-align: center;
+    margin-top: 50px;
     padding: 20px;
     width: 100%; /* 幅を100%に設定 */
     box-sizing: border-box; /* パディングを含めた幅の計算 */
-    position: fixed;
+    position: relative;
     bottom: 0;
 }
 
