@@ -20,8 +20,32 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ確認</title>
+    <link rel="stylesheet" href="css/confirm.css"> <!-- 外部CSSファイルの読み込み -->
 </head>
 <body>
+
+<header>
+    <div class="header-container">
+        <!-- ロゴ -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="ささえタイのロゴ" class="logo">
+            </a>
+        </div>
+
+        <!-- メニュー -->
+        <nav class="menu-container">
+            <ul class="menu">
+                <li><a href="index.html#sasaetaitoha">ささえタイとは</a></li>
+                <li><a href="index.html#kinouichiran">機能一覧</a></li>
+                <li><a href="index.html#kigyouzyouhou">企業情報</a></li>
+            </ul>
+        </nav>
+
+        <!-- 資料請求・お問い合わせボタン -->
+        <a href="sendform.php" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
+    </div>
+</header>
 
 <h2>お問い合わせ内容確認</h2>
 
@@ -65,8 +89,8 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
 
     <!-- ユーザーが確認後、POSTデータをsubmit.phpに送信 -->
     <div class="form-button">
-        <input type="submit" value="送信">
         <input type="button" value="修正する" onclick="history.back()">
+        <input type="submit" value="送信">
     </div>
 
     <!-- POSTデータをhiddenでsubmit.phpへ引き継ぐ -->
@@ -80,6 +104,15 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
     <input type="hidden" name="people_num" value="<?php echo $people_num; ?>">
     <input type="hidden" name="inquiry_detail" value="<?php echo $inquiry_detail; ?>">
 </form>
+
+<footer>
+    <div class="footer-container">
+        copyright©2024&nbsp;NIPS Co.,Ltd.&nbsp;all&nbsp;rights&nbsp;reserved.
+        <a class="pagetop" href="#">
+            <img src="img/up_arrow.png" alt="トップへ戻る" class="up_arrow">
+        </a>
+    </div>
+</footer>
 
 </body>
 </html>
