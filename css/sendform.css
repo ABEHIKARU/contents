@@ -116,12 +116,10 @@ textarea{
     padding: 8px;
     font-size: 14px;
 }
-#com_name, #email{
+#com_name, #email, #tel_num{
     width: 370px;
 }
-#tel_num{
-    width: 105px;
-}
+
 textarea {
     width: 370px;
     height: 160px;

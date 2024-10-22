@@ -32,6 +32,7 @@
 
     <h2>資料請求・お問い合わせフォーム</h2>
     
+    <form action="confirm.php" method="post">
     <table>
         <tr>
             <td>氏名(漢字)&nbsp;<img src="img/hissu.png"></td>
@@ -57,11 +58,9 @@
         </tr>
 
         <tr>
-            <td>電話番号&nbsp;<img src="img/hissu.png"></td>
+            <td>電話番号(半角)&nbsp;<img src="img/hissu.png"></td>
             <td>
-                <input type="tel" id="tel_num" name="tel_num" minlength="3" maxlength="4" size="4">-
-                <input type="tel" id="tel_num" name="tel_num" minlength="3" maxlength="4" size="4">-
-                <input type="tel" id="tel_num" name="tel_num" minlength="3" maxlength="4" size="4">
+                <input type="tel" id="tel_num" name="tel_num" maxlength="15">
             </td>
         </tr>
 
@@ -91,7 +90,7 @@
     <div class="form-button">
         <input type="submit" value="送信">
     </div>
-
+    </form>
     <footer>
         <div class="footer-container">
             copyright©2024&nbsp;NIPS Co.,Ltd.&nbsp;all&nbsp;rights&nbsp;reserved.
