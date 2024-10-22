@@ -347,8 +347,10 @@ h2 {
 /* 企業情報のスタイル */
 .company-info {
     display: flex; /* フレックスボックスを使用して横並びにする */
+    justify-content: center;
     background-color: #ffffff; /* 背景色を白に設定 */
-    border: 1px solid #ccc; /* グレーの枠線 */
+    width: 600px;
+    border: 2px solid #ccc; /* グレーの枠線 */
     border-radius: 10px; /* 角を丸くする */
     padding: 20px; /* 内側の余白 */
     align-items: center; /* 中央揃え */
