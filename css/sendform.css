@@ -134,7 +134,7 @@ span{
     text-align: center;
     margin-top: 20px;
 }
-.form-button input[type="button"] {
+.form-button input[type="submit"] {
     background-color: #8faadc; /* 青背景 */
     color: #000; /* 黒文字 */
     border: none; /* 枠線なし */
