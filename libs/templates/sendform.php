@@ -1,9 +1,25 @@
+<?php
+// POSTデータの取得
+// HTMLでの特殊文字をエスケープ
+// 送信されたデータが存在するかを確認し、なければ空文字
+$name_sei = isset($_POST['name_sei']) ? htmlspecialchars($_POST['name_sei'], ENT_QUOTES, 'UTF-8') : '';
+$name_mei = isset($_POST['name_mei']) ? htmlspecialchars($_POST['name_mei'], ENT_QUOTES, 'UTF-8') : '';
+$kana_name_sei = isset($_POST['kana_name_sei']) ? htmlspecialchars($_POST['kana_name_sei'], ENT_QUOTES, 'UTF-8') : '';
+$kana_name_mei = isset($_POST['kana_name_mei']) ? htmlspecialchars($_POST['kana_name_mei'], ENT_QUOTES, 'UTF-8') : '';
+$com_name = isset($_POST['com_name']) ? htmlspecialchars($_POST['com_name'], ENT_QUOTES, 'UTF-8') : '';
+$tel_num = isset($_POST['tel_num']) ? htmlspecialchars($_POST['tel_num'], ENT_QUOTES, 'UTF-8') : '';
+$email = isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8') : '';
+$people_num = isset($_POST['people_num']) ? htmlspecialchars($_POST['people_num'], ENT_QUOTES, 'UTF-8') : '';
+$inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inquiry_detail'], ENT_QUOTES, 'UTF-8') : '';
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ささえタイ送信フォーム</title>
+    <title>ささえタイお問い合わせ送信フォーム</title>
     <link rel="stylesheet" href="css/sendform.css"> <!-- 外部CSSファイルの読み込み -->
 </head>
 
@@ -89,16 +105,22 @@
         <tr>
 			<td>認証キー&nbsp;<img src="img/hissu.png" class="hissu"></td>
 			<td>
-            <img src="securimage\securimage_show.php" alt="CAPTCHA Image">
-
-                <!-- <div class="refreshimg"> -->
-                <a href="" onclick="document.getElementById('captcha').src = '/securimage/securimage_show.php?' + Math.random(); return false;">(別の画像を表示する)</a>
-                <!-- </div> -->
-                <p><span>表示されているキーワードを半角英数字でご記入ください。<br>大文字小文字はどちらでも（全て小文字で）大丈夫です。</span></p>
-                <input type="text" name="captcha_code" id="captcha_code" size="15" maxlength="6" required>
-                <input type="hidden" name="captcha_id" value="<?php echo $_SESSION['captcha_id']; ?>"> <!-- キャプチャIDを隠しフィールドに -->
-                <div id="errorDispaly" style="color: red;">
-                </div>
+            <img id="captcha" src="securimage/securimage_show.php" alt="CAPTCHA Image">
+            <!-- <div class="refreshimg"> -->
+            <a id="different_img" href="#" onclick="document.getElementById('captcha').src = 'securimage/securimage_show.php?' + Math.random(); return false">（別の画像を表示）</a>
+            <!-- </div> -->
+            <p><span>表示されているキーワードを半角英数字でご記入ください。<br>大文字小文字はどちらでも（全て小文字で）大丈夫です。</span></p>
+            <input type="text" name="captcha_code" id="captcha_code" size="15" maxlength="6" required>
+            <input type="hidden" name="captcha_id" value="<?php echo $_SESSION['captcha_id']; ?>"> <!-- キャプチャIDを隠しフィールドに -->
+            <div id="errorDispaly" style="color: red;">
+                <!-- エラーメッセージの表示 -->
+                <?php if (!empty($error)): // エラーがある場合 
+                    foreach ($error as $err):
+                    echo htmlspecialchars($err, ENT_QUOTES, 'UTF-8');
+                    endforeach;
+                    endif; 
+                ?>
+            </div>
 			</td>
 		</tr>
     </table>

@@ -19,7 +19,7 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ確認</title>
+    <title>ささえタイお問い合わせ確認</title>
     <link rel="stylesheet" href="css/confirm.css"> <!-- 外部CSSファイルの読み込み -->
 </head>
 <body>
@@ -43,13 +43,13 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
         </nav>
 
         <!-- 資料請求・お問い合わせボタン -->
-        <a href="sendform.php" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
+        <a href="inquery.php" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
     </div>
 </header>
 
 <h2>お問い合わせ内容確認</h2>
 
-<form action="submit.php" method="post">
+<form action="inquery3.php" method="post">
     <table>
         <tr>
             <td>氏名(漢字):</td>
@@ -87,7 +87,10 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
         </tr>
     </table>
 
-    <!-- ユーザーが確認後、POSTデータをsubmit.phpに送信 -->
+    <!--確認ページへトークンをPOSTする、隠しフィールド「ticket」-->
+    <input type="hidden" name="ticket" value="<?php echo htmlspecialchars($ticket, ENT_QUOTES, 'UTF-8'); ?>">
+
+    <!-- ユーザーが確認後、POSTデータを送信 -->
     <div class="form-button">
         <input type="button" value="修正する" onclick="history.back()">
         <input type="submit" value="送信">

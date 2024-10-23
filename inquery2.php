@@ -1,4 +1,12 @@
 <?php
+
+include_once 'securimage/securimage.php';
+include_once 'securimage/CaptchaObject.php'; // クラスを明示的に読み込む
+
+require_once 'securimage/StorageAdapter/AdapterInterface.php';
+require_once 'securimage/StorageAdapter/Session.php';
+
+
 	session_start();    //セッションを開始
 
 	require 'libs/functions.php';   //テンプレートエンジンの読み込み
@@ -37,10 +45,7 @@
 	// $privacy_policy = "checked";
 
 	//以下は画像認証用データ
-	// $captcha_code = isset($_POST['captcha_code']) ? $_POST['captcha_code'] : NULL;
-
 	$captcha_code = isset($_POST['captcha_code']) ? $_POST['captcha_code'] : NULL;
-	$captcha_id = isset($_POST['captcha_id']) ? $_POST['captcha_id'] : NULL; // キャプチャIDを取得
 
 	//POSTされたデータを整形（前後にあるホワイトスペースを削除）
 	$name_sei = trim($name_sei);
@@ -60,11 +65,11 @@
 	//画像認証のチェック
 	if(mb_strlen($captcha_code) <> 6){
 		$error[] = '*画像認証の確認キーワードは6文字で入力してください。';
-	}else if ($securimage->check($captcha_code, $captcha_id) == false) {
+	}else if ($securimage->check($captcha_code) == false) {
 		$error[] = '*画像認証の確認キーワードが誤っています。';
 	}
 
-	//チェックの結果にエラーがあった場合は、テンプレートの表示に必要な入力されたデータとエラーメッセージを配列「$data」に代入し、display()関数でinquery_view.phpを表示
+	//チェックの結果にエラーがあった場合は、テンプレートの表示に必要な入力されたデータとエラーメッセージを配列「$data」に代入し、display()関数でsendform.phpを表示
 	if(count($error) > 0){
 		//エラーがあった場合
 		$data = array();
@@ -101,6 +106,7 @@
 		$data['email'] = $email;
 		$data['people_num'] = $people_num;
 		$data['inquiry_detail'] = $inquiry_detail;
+		$data['ticket'] = $ticket; // CSRFトークンを再度渡す
 		display('confirm.php', $data);
 	}
 
