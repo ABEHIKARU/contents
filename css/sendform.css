@@ -92,7 +92,7 @@ h2{
     margin-top: 120px;
     margin-bottom: 20px;
 }
-img{
+.hissu{
     width: 25px;
     height: auto;
 }
@@ -103,6 +103,11 @@ table{
     border-collapse: separate;
     border-spacing: 10px;
 }
+table td {
+    width: auto; /* 必要な場合に幅を自動調整 */
+    max-width: 100%; /* 必要な幅に収まるように設定 */
+}
+
 table td:first-child {
     text-align: right;
     padding-right: 10px; /* テキストと次の列との間にスペースを追加 */
