@@ -4,7 +4,7 @@
  * Project:     Securimage: A PHP class for creating and managing form CAPTCHA images<br />
  * File:        securimage_show.php<br />
  *
- * Copyright (c) 2018, Drew Phillips
+ * Copyright (c) 2013, Drew Phillips
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -34,10 +34,12 @@
  * If you found this script useful, please take a quick moment to rate it.<br />
  * http://www.hotscripts.com/rate/49400.html  Thanks.
  *
- * @link https://github.com/dapphp/securimage Securimage PHP CAPTCHA
- * @copyright 2018 Drew Phillips
+ * @link http://www.phpcaptcha.org Securimage PHP CAPTCHA
+ * @link http://www.phpcaptcha.org/latest.zip Download Latest Version
+ * @link http://www.phpcaptcha.org/Securimage_Docs/ Online Documentation
+ * @copyright 2013 Drew Phillips
  * @author Drew Phillips <drew@drew-phillips.com>
- * @version 4.0.2 (May 2020)
+ * @version 3.6.6 (Nov 20 2017)
  * @package Securimage
  *
  */
@@ -45,18 +47,9 @@
 // Remove the "//" from the following line for debugging problems
 // error_reporting(E_ALL); ini_set('display_errors', 1);
 
-if (!class_exists('Securimage')) {
-    require_once __DIR__ . '/securimage.php';
-}
+require_once dirname(__FILE__) . '/securimage.php';
 
-$options = array();
-
-// set id if supplied to script via HTTP GET
-if (!empty($_GET['id'])) {
-    $options['captchaId'] = $_GET['id'];
-}
-
-$img = new Securimage($options);
+$img = new Securimage();
 
 // You can customize the image by making changes below, some examples are included - remove the "//" to uncomment
 
@@ -77,5 +70,12 @@ $img = new Securimage($options);
 
 // see securimage.php for more options that can be set
 
+// set namespace if supplied to script via HTTP GET
+if (!empty($_GET['namespace'])) $img->setNamespace($_GET['namespace']);
+
+$img->perturbation = 0;
+$img->num_lines = 3;
 
 $img->show();  // outputs the image and content headers to the browser
+// alternate use:
+// $img->show('/path/to/background_image.jpg');

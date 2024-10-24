@@ -24,34 +24,45 @@
  * If you found this script useful, please take a quick moment to rate it.<br />
  * http://www.hotscripts.com/rate/49400.html  Thanks.
  *
- * @link https://github.com/dapphp/securimage Securimage PHP CAPTCHA
- * @copyright 2018 Drew Phillips
+ * @link http://www.phpcaptcha.org Securimage PHP CAPTCHA
+ * @link http://www.phpcaptcha.org/latest.zip Download Latest Version
+ * @link http://www.phpcaptcha.org/Securimage_Docs/ Online Documentation
+ * @copyright 2012 Drew Phillips
  * @author Drew Phillips <drew@drew-phillips.com>
- * @version 4.0.2 (May 2020)
+ * @version 3.6.6 (Nov 20 2017)
  * @package Securimage
  *
  */
 
-if (!class_exists('Securimage')) {
-    require_once __DIR__ . '/securimage.php';
-}
+require_once dirname(__FILE__) . '/securimage.php';
 
-$options = array();
+// if using database, adjust these options as necessary and change $img = new Securimage(); to $img = new Securimage($options);
+// see test.mysql.php or test.sqlite.php for examples
+$options = array(
+    'use_database'    => true,
+    'database_name'   => '',
+    'database_user'   => '',
+    'database_driver' => Securimage::SI_DRIVER_MYSQL
+);
 
-// set id if supplied to script via HTTP GET
-if (!empty($_GET['id'])) {
-    $options['captchaId'] = $_GET['id'];
-}
-
-$img = new Securimage($options);
+$img = new Securimage();
 
 // Other audio settings
+//$img->audio_use_sox   = true;
 //$img->audio_use_noise = true;
 //$img->degrade_audio   = false;
+//$img->sox_binary_path = 'sox';
 //Securimage::$lame_binary_path = '/usr/bin/lame'; // for mp3 audio support
 
-// To use an alternate language, uncomment the following and point at suitable audio files
+// To use an alternate language, uncomment the following and download the files from phpcaptcha.org
 // $img->audio_path = $img->securimage_path . '/audio/es/';
+
+// If you have more than one captcha on a page, one must use a custom namespace
+// $img->namespace = 'form2';
+
+// set namespace if supplied to script via HTTP GET
+if (!empty($_GET['namespace'])) $img->setNamespace($_GET['namespace']);
+
 
 // mp3 or wav format
 $format = (isset($_GET['format']) && strtolower($_GET['format']) == 'mp3') ? 'mp3' : null;

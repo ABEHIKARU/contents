@@ -1,50 +1,48 @@
-## Name:
+NAME:
 
-**Securimage** - A PHP class for creating captcha images and audio with many options.
+    Securimage - A PHP class for creating captcha images and audio with many options.
 
-## Version:
+VERSION:
 
-**3.6.7**
+    3.6.7
 
-## Author:
+AUTHOR:
 
-Drew Phillips <drew@drew-phillips.com>
+    Drew Phillips <drew@drew-phillips.com>
 
-## Download:
+DOWNLOAD:
 
-The latest version can always be found at [phpcaptcha.org](https://www.phpcaptcha.org)
+    The latest version can always be
+    found at http://www.phpcaptcha.org
 
-## Documentation:
+DOCUMENTATION:
 
-Online documentation of the class, methods, and variables can be found 
-at http://www.phpcaptcha.org/Securimage_Docs/
+    Online documentation of the class, methods, and variables can
+    be found at http://www.phpcaptcha.org/Securimage_Docs/
 
-## Requirements:
+REQUIREMENTS:
 
-* PHP 5.4 or greater
-* GD  2.0
-* FreeType (Required, for TTF fonts)
-* PDO (if using Sqlite, MySQL, or PostgreSQL)
+    PHP 5.4 or greater
+    GD  2.0
+    FreeType (Required, for TTF fonts)
+    PDO (if using Sqlite, MySQL, or PostgreSQL)
 
-## Synopsis:
+SYNOPSIS:
+
+    require_once 'securimage.php';
     
-**Within your HTML form**
+    **Within your HTML form**
     
     <form method="post" action="">
     .. form elements
     
     <div>
-        <?php
-            require_once 'securimage.php';
-            echo Securimage::getCaptchaHtml();
-        ?>
+        <?php echo Securimage::getCaptchaHtml() ?>
     </div>
     </form>
-   
     
-**Within your PHP form processor**
-
-    require_once 'securimage.php';
+    
+    **Within your PHP form processor**
 
     // Code Validation
 
@@ -55,44 +53,43 @@ at http://www.phpcaptcha.org/Securimage_Docs/
       echo "Sorry, wrong code.";
     }
 
-## Description:
+DESCRIPTION:
 
-What is **Securimage**?
+    What is Securimage?
 
-Securimage is a PHP class that is used to generate and validate CAPTCHA images.
+    Securimage is a PHP class that is used to generate and validate CAPTCHA
+    images.
     
-The classes uses an existing PHP session or creates its own if none is found to
-store the CAPTCHA code.  In addition, a database can be used instead of 
-session storage.
+    The classes uses an existing PHP session or creates its own if
+    none is found to store the CAPTCHA code.  In addition, a database can be
+    used instead of session storage.
     
-Variables within the class are used to control the style and display of the
-image.  The class uses TTF fonts and effects for strengthening the security of
-the image.
+    Variables within the class are used to control the style and display of
+    the image.  The class uses TTF fonts and effects for strengthening the
+    security of the image.
     
-It also creates audible codes which are played for visually impared users.
+    It also creates audible codes which are played for visually impared users.
 
-## UPGRADE NOTICE:
+UPGRADE NOTICE:
+    3.6.3 and below:
+    Securimage 3.6.4 fixed a XSS vulnerability in example_form.ajax.php.  It is
+    recommended to upgrade to the latest version or delete example_form.ajax.php
+    from the securimage directory on your website.
 
-**3.6.3 and below:**
-Securimage 3.6.4 fixed a XSS vulnerability in example_form.ajax.php.  It is
-recommended to upgrade to the latest version or delete example_form.ajax.php
-from the securimage directory on your website.
+    3.6.2 and above:
+    If you are upgrading to 3.6.2 or greater AND are using database storage,
+    the table structure has changed in 3.6.2 adding an audio_data column for
+    storing audio files in the database in order to support HTTP range
+    requests.  Delete your tables and have Securimage recreate them or see
+    the function createDatabaseTables() in securimage.php for the new structure
+    depending on which database backend you are using and alter the tables as
+    needed.  If using SQLite, just overwrite your existing securimage.sq3 file
+    with the one from this release.
 
-**3.6.2 and above:**
+    If you are not using database tables for storage, ignore this notice.
 
-If you are upgrading to 3.6.2 or greater *AND* are using database storage,
-the table structure has changed in 3.6.2 adding an audio_data column for
-storing audio files in the database in order to support HTTP range
-requests.  Delete your tables and have Securimage recreate them or see
-the function createDatabaseTables() in securimage.php for the new structure
-depending on which database backend you are using and alter the tables as
-needed.  If using SQLite, just overwrite your existing securimage.sq3 file
-with the one from this release.
+COPYRIGHT:
 
-*If you are not using database tables for storage, ignore this notice.*
-
-## Copyright:
-Script
     Copyright (c) 2018 Drew Phillips
     All rights reserved.
 
@@ -117,27 +114,19 @@ Script
     ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
     POSSIBILITY OF SUCH DAMAGE.
 
-## Licenses:
-
-**WavFile.php**
+LICENSES:
 
     The WavFile.php class used in Securimage by Drew Phillips and Paul Voegler
     is used under the BSD License.  See WavFile.php for details.
     Many thanks to Paul Voegler (http://www.voegler.eu/) for contributing to
     Securimage.
-Script
----------------------------------------------------------------------------
 
-**Flash code for Securimage**
+    ---------------------------------------------------------------------------
+    Flash code created by Age Bosma & Mario Romero (animario@hotmail.com)
+    Many thanks for releasing this to the project!
 
-Flash code created by Age Bosma & Mario Romero (animario@hotmail.com)
-Many thanks for releasing this to the project!
-
----------------------------------------------------------------------------
-
-**HKCaptcha**
-
-Portions of Securimage contain code from Han-Kwang Nienhuys' PHP captcha
+    ---------------------------------------------------------------------------
+    Portions of Securimage contain code from Han-Kwang Nienhuys' PHP captcha
         
     Han-Kwang Nienhuys' PHP captcha
     Copyright June 2007
@@ -148,10 +137,7 @@ Portions of Securimage contain code from Han-Kwang Nienhuys' PHP captcha
     The original, unrestricted version can be obtained from
     http://www.lagom.nl/linux/hkcaptcha/
     
----------------------------------------------------------------------------
-
-**AHGBold.ttf**
-
+    ---------------------------------------------------------------------------
     AHGBold.ttf (AlteHaasGroteskBold.ttf) font was created by Yann Le Coroller
     and is distributed as freeware.
     
@@ -167,11 +153,9 @@ Portions of Securimage contain code from Han-Kwang Nienhuys' PHP captcha
     www.yannlecoroller.com
     yann@lecoroller.com
 
----------------------------------------------------------------------------
-
-**PopForge Flash Library**
-
-Portions of securimage_play.swf use the PopForge flash library for playing audio
+    ---------------------------------------------------------------------------
+    Portions of securimage_play.swf use the PopForge flash library for
+    playing audio
 
     /**
      * Copyright(C) 2007 Andre Michelle and Joa Ebert
@@ -194,22 +178,16 @@ Portions of securimage_play.swf use the PopForge flash library for playing audio
      * along with this program. If not, see <http://www.gnu.org/licenses/>
      */
      
---------------------------------------------------------------------------
-
-**Graphics**
-
-Some graphics used are from the Humility Icon Pack by WorLord
+     --------------------------------------------------------------------------
+     Some graphics used are from the Humility Icon Pack by WorLord
 
      License: GNU/GPL (http://findicons.com/pack/1723/humility)
      http://findicons.com/icon/192558/gnome_volume_control
      http://findicons.com/icon/192562/gtk_refresh
 
---------------------------------------------------------------------------
-
-
-**Background noise sound files are from SoundJay.com**
-
-http://www.soundjay.com/tos.html
+     --------------------------------------------------------------------------
+     Background noise sound files are from SoundJay.com
+     http://www.soundjay.com/tos.html
      
      All sound effects on this website are created by us and protected under
      the copyright laws, international treaty provisions and other applicable

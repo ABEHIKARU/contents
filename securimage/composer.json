@@ -3,7 +3,7 @@
     "type": "library",
     "description": "PHP CAPTCHA Library",
     "keywords": ["captcha","security","forms","anti-spam"],
-    "homepage": "https://github.com/dapphp/securimage",
+    "homepage": "https://www.phpcaptcha.org",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -21,9 +21,6 @@
         "ext-pdo_sqlite": "For SQLite3 database support"
     },
     "autoload": {
-        "classmap": ["securimage.php"],
-        "psr-4" : {
-            "Securimage\\": "path_to_securimage"
-        }
+        "classmap": ["securimage.php"]
     }
 }

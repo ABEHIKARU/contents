@@ -25,12 +25,14 @@
 	$tel_num = $_SESSION['tel_num'];
 	$email = $_SESSION['email'];
 	$people_num = $_SESSION['people_num'];
-	$inquiry_detail = $_SESSION['inquiry_ditail'];
+	$inquiry_detail = $_SESSION['inquiry_detail'];
 
 	//メール：件名
 	$subject = 'ささえタイHPからのお問い合わせ';
 	//メール本文
 	//$body = 'コンタクトページからの問い合わせ'. "\n\n" . $body;
+	// メール本文の初期化
+	$mailbody = '';
 	$mailbody = $mailbody . '■氏名（漢字）' . "\n\n" . $name_sei . $name_mei . "\n\n";
 	$mailbody = $mailbody . '■氏名（フリガナ）' . "\n\n" . $kana_name_sei . $kana_name_mei . "\n\n";
 	$mailbody = $mailbody . '■会社名' . "\n\n" . $com_name . "\n\n";
@@ -56,7 +58,8 @@
 
 	//From ヘッダーを作成
 	//返信先をフォームに入力されたアドレスではなくシステムセンターのアドレスに設定(SPAM判定対応)
-	$header = 'From: ' . mb_encode_mimeheader($name). ' <' . $returnMail. '>';
+	$fullName = $name_sei . ' ' . $name_mei; // 姓と名を連結
+	$header = 'From: ' . mb_encode_mimeheader($fullName). ' <' . $returnMail. '>';
 
 	//メールの送信、セーフモードがOnの場合は第5引数が使えない
 	if(ini_get('safe_mode')){
@@ -81,6 +84,6 @@
 	$data = array();
 	$data['message'] = $message;
 	$data['result'] = $result;
-	display('libs\templates\submit.php', $data);
+	display('submit.php', $data);
 
 ?>

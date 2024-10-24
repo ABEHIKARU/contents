@@ -23,13 +23,13 @@
 	$data['inquiry_detail'] = isset($_SESSION['inquiry_detail']) ? $_SESSION['inquiry_detail'] : NULL;
 
 	//CSRF対策の固定トークンを生成
-	// if(!isset($_SESSION['ticket'])){
-	// 	//$_SESSION['ticket']がセットされていなければ、トークンを生成して代入
-	// 	$_SESSION['ticket'] = sha1(uniqid(mt_rand(), TRUE));
-	// }
+	if(!isset($_SESSION['ticket'])){
+		//$_SESSION['ticket']がセットされていなければ、トークンを生成して代入
+		$_SESSION['ticket'] = sha1(uniqid(mt_rand(), TRUE));
+	}
 
 	// CSRF対策の固定トークンを生成
-    $_SESSION['ticket'] = sha1(uniqid(mt_rand(), TRUE));
+    // $_SESSION['ticket'] = sha1(uniqid(mt_rand(), TRUE));
 
 	//トークンの値を配列に代入してテンプレートに渡す（隠しフィールドに挿入）
 	$data['ticket'] = $_SESSION['ticket'];

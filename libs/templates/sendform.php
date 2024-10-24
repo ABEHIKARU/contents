@@ -2,16 +2,15 @@
 // POSTデータの取得
 // HTMLでの特殊文字をエスケープ
 // 送信されたデータが存在するかを確認し、なければ空文字
-$name_sei = isset($_POST['name_sei']) ? htmlspecialchars($_POST['name_sei'], ENT_QUOTES, 'UTF-8') : '';
-$name_mei = isset($_POST['name_mei']) ? htmlspecialchars($_POST['name_mei'], ENT_QUOTES, 'UTF-8') : '';
-$kana_name_sei = isset($_POST['kana_name_sei']) ? htmlspecialchars($_POST['kana_name_sei'], ENT_QUOTES, 'UTF-8') : '';
-$kana_name_mei = isset($_POST['kana_name_mei']) ? htmlspecialchars($_POST['kana_name_mei'], ENT_QUOTES, 'UTF-8') : '';
-$com_name = isset($_POST['com_name']) ? htmlspecialchars($_POST['com_name'], ENT_QUOTES, 'UTF-8') : '';
-$tel_num = isset($_POST['tel_num']) ? htmlspecialchars($_POST['tel_num'], ENT_QUOTES, 'UTF-8') : '';
-$email = isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8') : '';
-$people_num = isset($_POST['people_num']) ? htmlspecialchars($_POST['people_num'], ENT_QUOTES, 'UTF-8') : '';
-$inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inquiry_detail'], ENT_QUOTES, 'UTF-8') : '';
-
+$name_sei = isset($_SESSION['name_sei']) ? htmlspecialchars($_SESSION['name_sei'], ENT_QUOTES, 'UTF-8') : '';
+$name_mei = isset($_SESSION['name_mei']) ? htmlspecialchars($_SESSION['name_mei'], ENT_QUOTES, 'UTF-8') : '';
+$kana_name_sei = isset($_SESSION['kana_name_sei']) ? htmlspecialchars($_SESSION['kana_name_sei'], ENT_QUOTES, 'UTF-8') : '';
+$kana_name_mei = isset($_SESSION['kana_name_mei']) ? htmlspecialchars($_SESSION['kana_name_mei'], ENT_QUOTES, 'UTF-8') : '';
+$com_name = isset($_SESSION['com_name']) ? htmlspecialchars($_SESSION['com_name'], ENT_QUOTES, 'UTF-8') : '';
+$tel_num = isset($_SESSION['tel_num']) ? htmlspecialchars($_SESSION['tel_num'], ENT_QUOTES, 'UTF-8') : '';
+$email = isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email'], ENT_QUOTES, 'UTF-8') : '';
+$people_num = isset($_SESSION['people_num']) ? htmlspecialchars($_SESSION['people_num'], ENT_QUOTES, 'UTF-8') : '';
+$inquiry_detail = isset($_SESSION['inquiry_detail']) ? htmlspecialchars($_SESSION['inquiry_detail'], ENT_QUOTES, 'UTF-8') : '';
 ?>
 
 <!DOCTYPE html>
@@ -54,44 +53,44 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
         <tr>
             <td>氏名(漢字)&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="text" id="name_sei" name="name_sei" placeholder="姓" maxlength="20" required>
-                <input type="text" id="name_mei" name="name_mei" placeholder="名" maxlength="20" required>
+                <input type="text" id="name_sei" name="name_sei" value="<?php echo $name_sei; ?>" placeholder="姓" maxlength="20" required>
+                <input type="text" id="name_mei" name="name_mei" value="<?php echo $name_mei; ?>" placeholder="名" maxlength="20" required>
             </td>
         </tr>
         
         <tr>
             <td>氏名(フリガナ)&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="text" id="kana_name_sei" name="kana_name_sei" placeholder="セイ" maxlength="20" required>
-                <input type="text" id="kana_name_mei" name="kana_name_mei" placeholder="メイ" maxlength="20" required>
+                <input type="text" id="kana_name_sei" name="kana_name_sei" value="<?php echo $kana_name_sei; ?>" placeholder="セイ" maxlength="20" required>
+                <input type="text" id="kana_name_mei" name="kana_name_mei" value="<?php echo $kana_name_mei; ?>" placeholder="メイ" maxlength="20" required>
             </td>
         </tr>
 
         <tr>
             <td>会社名&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="text" id="com_name" name="com_name" maxlength="100" required>
+                <input type="text" id="com_name" name="com_name" value="<?php echo $com_name; ?>" maxlength="100" required>
             </td>
         </tr>
 
         <tr>
             <td>電話番号(半角)&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="tel" id="tel_num" name="tel_num" maxlength="15" required>
+                <input type="tel" id="tel_num" name="tel_num" value="<?php echo $tel_num; ?>" maxlength="15" required>
             </td>
         </tr>
 
         <tr>
             <td>メールアドレス&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="email" id="email" name="email" placeholder="form@example.com" maxlength="100" required>
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>" placeholder="form@example.com" maxlength="100" required>
             </td>
         </tr>
 
         <tr>
             <td>利用予定人数&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="text" id="people_num" name="people_num" maxlength="10" required>人
+                <input type="text" id="people_num" name="people_num" value="<?php echo $people_num; ?>" maxlength="10" required>人
                 <span>※おおよその人数で構いません</span>
             </td>
         </tr>
@@ -99,7 +98,7 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
         <tr>
             <td>お問い合わせ内容&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <textarea id="inquiry_detail" name="inquiry_detail" maxlength="2000" required></textarea>
+                <textarea id="inquiry_detail" name="inquiry_detail" maxlength="2000" required><?php echo $inquiry_detail; ?></textarea>
             </td>
         </tr>
         <tr>
@@ -111,21 +110,19 @@ $inquiry_detail = isset($_POST['inquiry_detail']) ? htmlspecialchars($_POST['inq
             <!-- </div> -->
             <p><span>表示されているキーワードを半角英数字でご記入ください。<br>大文字小文字はどちらでも（全て小文字で）大丈夫です。</span></p>
             <input type="text" name="captcha_code" id="captcha_code" size="15" maxlength="6" required>
-            <input type="hidden" name="captcha_id" value="<?php echo $_SESSION['captcha_id']; ?>"> <!-- キャプチャIDを隠しフィールドに -->
             <div id="errorDispaly" style="color: red;">
                 <!-- エラーメッセージの表示 -->
-                <?php if (!empty($error)): // エラーがある場合 
-                    foreach ($error as $err):
-                    echo htmlspecialchars($err, ENT_QUOTES, 'UTF-8');
-                    endforeach;
-                    endif; 
-                ?>
+                <?php if(isset($error)): ?>
+				<?php foreach($error as $var): ?>
+				<?php echo $var; ?><br />
+				<?php endforeach; ?>
+				<?php endif; ?>
             </div>
 			</td>
 		</tr>
     </table>
     <!--確認ページへトークンをPOSTする、隠しフィールド「ticket」-->
-    <input type="hidden" name="ticket" value="<?php echo htmlspecialchars($ticket, ENT_QUOTES, 'UTF-8'); ?>">
+    <input type="hidden" name="ticket" value="<?php echo $ticket; ?>">
     <div class="form-button">
         <input type="submit" value="確認する">
     </div>

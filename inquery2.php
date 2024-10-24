@@ -1,12 +1,5 @@
 <?php
 
-include_once 'securimage/securimage.php';
-include_once 'securimage/CaptchaObject.php'; // クラスを明示的に読み込む
-
-require_once 'securimage/StorageAdapter/AdapterInterface.php';
-require_once 'securimage/StorageAdapter/Session.php';
-
-
 	session_start();    //セッションを開始
 
 	require 'libs/functions.php';   //テンプレートエンジンの読み込み
@@ -38,6 +31,7 @@ require_once 'securimage/StorageAdapter/Session.php';
 	$email = isset($_POST['email']) ? $_POST['email'] : NULL;
 	$people_num = isset($_POST['people_num']) ? $_POST['people_num'] : NULL;
 	$inquiry_detail = isset($_POST['inquiry_detail']) ? $_POST['inquiry_detail'] : NULL;
+
 	//$ppchk = isset($_POST['privacy_policy']) ? $_POST['privacy_policy'] : NULL;
 	//if($ppchk=1){
 	//	$privacy_policy = "checked";
@@ -78,6 +72,7 @@ require_once 'securimage/StorageAdapter/Session.php';
 		$data['name_mei'] = $name_mei;
 		$data['kana_name_sei'] = $kana_name_sei;
 		$data['kana_name_mei'] = $kana_name_mei;
+		$data['com_name'] = $com_name;
 		$data['tel_num'] = $tel_num;
 		$data['email'] = $email;
 		$data['people_num'] = $people_num;
@@ -91,6 +86,7 @@ require_once 'securimage/StorageAdapter/Session.php';
 		$_SESSION['name_mei'] = $name_mei;
 		$_SESSION['kana_name_sei'] = $kana_name_sei;
 		$_SESSION['kana_name_mei'] = $kana_name_mei;
+		$_SESSION['com_name'] = $com_name;
 		$_SESSION['tel_num'] = $tel_num;
 		$_SESSION['email'] = $email;
 		$_SESSION['people_num'] = $people_num;
@@ -102,6 +98,7 @@ require_once 'securimage/StorageAdapter/Session.php';
 		$data['name_mei'] = $name_mei;
 		$data['kana_name_sei'] = $kana_name_sei;
 		$data['kana_name_mei'] = $kana_name_mei;
+		$data['com_name'] = $com_name;
 		$data['tel_num'] = $tel_num;
 		$data['email'] = $email;
 		$data['people_num'] = $people_num;

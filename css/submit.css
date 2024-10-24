@@ -86,62 +86,17 @@ body {
     background-color: #f36a8b;
 }
 
-/* 確認のスタイル */
 h2{
     text-align: center;
     margin-top: 120px;
     margin-bottom: 20px;
 }
-table{
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    border-collapse: separate;
-    border-spacing: 10px;
-}
-table td:first-child {
-    text-align: right;
-    padding-right: 10px; /* テキストと次の列との間にスペースを追加 */
-}
-.form-button{
+p{
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.form-button2 button[type="submit"] {
-    background-color: #8faadc; /* 青背景 */
-    color: #000; /* 黒文字 */
-    border: none; /* 枠線なし */
-    border-radius: 10px; /* 角丸 */
-    width: 120px;
-    padding: 10px 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 影 */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* ホバー時の変化を滑らかに */
-}
-.form-button1 button[type="submit"] {
-    background-color: #cccccc; /* 青背景 */
-    color: #000; /* 黒文字 */
-    border: none; /* 枠線なし */
-    border-radius: 10px; /* 角丸 */
-    width: 120px;
-    margin:20px;
-    padding: 10px 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 影 */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* ホバー時の変化を滑らかに */
-}
-
-/* ホバー時の変化 */
-.form-button2 button[type="submit"]:hover {
-    background-color: #6991db; /* 濃い青に変化 */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* 影を強調 */
-}
-/* ホバー時の変化 */
-.form-button1 button[type="submit"]:hover {
-    background-color: #b3b3b3; 
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* 影を強調 */
+.button-container{
+    text-align: center;
 }
 
 /* フッター */
