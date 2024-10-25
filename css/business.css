@@ -199,8 +199,8 @@ body {
 /* コンテンツのスタイル */
 .notice-body {
     color: #333;
-    font-size: 14px;
-    margin-top: 30px;
+    /* font-size: 14px; */
+    margin-top: 15px;
 }
 
 .notice-body p {
@@ -208,12 +208,12 @@ body {
     font-size: 14px;
     color: #333;
     margin-top: 0px;
+    margin-bottom: 5px;
 }
 
 .notice-body img {
-    width: 170px;
-    height: 110px;
-    margin-top: 5px;
+    width: 200px;
+    height: auto;
 }
 
 /* フッター */
