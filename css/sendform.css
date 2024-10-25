@@ -110,6 +110,8 @@ table td {
 
 table td:first-child {
     text-align: right;
+    vertical-align:top;
+    padding:8px;
     padding-right: 10px; /* テキストと次の列との間にスペースを追加 */
 }
 input[type="text"],
