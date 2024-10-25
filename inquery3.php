@@ -47,10 +47,11 @@
 	//--------sendmail------------
 
 	//メールの宛先
-	$mailTo = 'sc@nipssc.co.jp';
+	$mailTo = 'habe@nipssc.co.jp';
+	// TODO テスト後差し替え
 
 	//Return-Pathに指定するメールアドレス
-	$returnMail = 'sc@nipssc.co.jp';
+	$returnMail = 'habe@nipssc.co.jp';
 
 	//mbstringの日本語設定
 	mb_language('ja');
