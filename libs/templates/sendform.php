@@ -42,7 +42,7 @@ $inquiry_detail = isset($_SESSION['inquiry_detail']) ? htmlspecialchars($_SESSIO
             </nav>
 
             <!-- 資料請求・お問い合わせボタン -->
-            <a href="inquery2.php" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
+            <a href="inquery.php" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
         </div>
     </header>
 
