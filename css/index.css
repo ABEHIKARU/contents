@@ -384,16 +384,16 @@ h2 {
 /* フッター */
 footer{
     background-color: rgb(65, 182, 230);
-    left: 0; /* 左側に配置 */
-    bottom: 0; /* 画面の一番下に配置 */
+    position:absolute;
+    left: 0;
     width: 100%; /* 幅を画面いっぱいに */
+    margin: 0 auto;
     box-sizing: border-box; /* パディングを含めた幅の計算 */
 }
 .footer-container {
     color: white;
     text-align: center;
     padding: 20px;
-    margin: 0 auto; /* 中央揃え（必要に応じて） */
 }
 
 
