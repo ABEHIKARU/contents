@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 /* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
@@ -119,6 +123,7 @@ body {
     justify-content: flex-start; /* 左揃え */
     align-items: flex-start; /* 上部揃えで位置を調整 */
     margin-top: 40px;
+    margin-bottom: 100px;
     padding-left: 0px; /* ステップ全体を少し左に移動 */
 }
 
