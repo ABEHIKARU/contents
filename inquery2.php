@@ -5,7 +5,7 @@
 	require 'libs/functions.php';   //テンプレートエンジンの読み込み
 
 	//画像認証ライブラリの読み込み(securimage)
-	include_once 'securimage\securimage.php';
+	include_once('sasaetai\securimage\securimage.php');
 	$securimage = new Securimage();
 
 	//POSTされたデータをチェック
