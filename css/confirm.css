@@ -6,16 +6,12 @@ html {
 body {
     font-family: Arial, sans-serif;
     background-color: #eaf7fc;
-    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    padding: 0;
-    /* min-height: 100vh;  */
-    /* display: flex;  */
+    width: 1496px; /* 固定幅 */
+    margin: 0 auto; /* 中央揃え */
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
 }
 
 /* ヘッダーコンテナ */
@@ -145,16 +141,17 @@ table td:first-child {
 }
 
 /* フッター */
-.footer-container {
+footer{
     background-color: rgb(65, 182, 230);
+}
+.footer-container {
     color: white;
     text-align: center;
-    margin-top: 50px;
     padding: 20px;
-    width: 100%; /* 幅を100%に設定 */
+    width: 100%; /* 幅を画面いっぱいに */
     box-sizing: border-box; /* パディングを含めた幅の計算 */
-    position: fixed;
-    bottom: 0;
+    margin: 0 auto; /* 中央揃え */
+    position: relative;
 }
 
 .pagetop {

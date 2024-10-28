@@ -6,16 +6,12 @@ html {
 body {
     font-family: Arial, sans-serif;
     background-color: #eaf7fc;
-    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    padding: 0;
-    min-height: 100vh; /* 最小の高さを設定 */
-    /* display: flex;  */
+    width: 1500px; /* 固定幅 */
+    margin: 0 auto; /* 中央揃え */
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
 }
 
 /* ヘッダーコンテナ */
@@ -90,6 +86,7 @@ body {
 /* メインロゴのスタイル */
 .main_logo {
     width: 450px;
+    max-width: 100%;
     height: auto; /* 縦横比を維持 */
     margin-top: 50px;
     margin-left: 200px;
@@ -357,7 +354,7 @@ h2 {
     border-radius: 10px; /* 角を丸くする */
     padding: 20px; /* 内側の余白 */
     align-items: center; /* 中央揃え */
-    margin: 20px 480px; /* 上下に余白を追加 */
+    margin: 0 auto;
     margin-bottom: 100px;
 }
 
@@ -385,15 +382,19 @@ h2 {
 }
 
 /* フッター */
-.footer-container {
+footer{
     background-color: rgb(65, 182, 230);
+}
+.footer-container {
     color: white;
     text-align: center;
     padding: 20px;
-    width: 100%; /* 幅を100%に設定 */
+    width: 100%; /* 幅を画面いっぱいに */
     box-sizing: border-box; /* パディングを含めた幅の計算 */
+    margin: 0 auto; /* 中央揃え */
     position: relative;
 }
+
 
 .pagetop {
     position: absolute; /* 画像の位置を絶対的に指定 */

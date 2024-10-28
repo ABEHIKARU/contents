@@ -2,15 +2,13 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #eaf7fc;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* 最小の高さを設定 */
-    /* display: flex;  */
+    width: 1496px; /* 固定幅 */
+    margin: 0 auto; /* 中央揃え */
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
 }
-
 /* ヘッダーコンテナ */
 .header-container {
     display: flex;
@@ -144,13 +142,16 @@ body {
 }
 
 /* フッター */
-.footer-container {
+footer{
     background-color: rgb(65, 182, 230);
+}
+.footer-container {
     color: white;
     text-align: center;
     padding: 20px;
-    width: 100%; /* 幅を100%に設定 */
+    width: 100%; /* 幅を画面いっぱいに */
     box-sizing: border-box; /* パディングを含めた幅の計算 */
+    margin: 0 auto; /* 中央揃え */
     position: relative;
 }
 
