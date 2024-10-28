@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 /* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
@@ -149,6 +153,7 @@ body {
     gap: 60px;
     align-items: center;
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 /* 上段の要素を3つ並べる */

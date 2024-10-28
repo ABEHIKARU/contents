@@ -113,6 +113,7 @@ table td:first-child {
 input[type="text"],
 input[type="tel"],
 input[type="email"],
+input[type="number"],
 textarea{
     border: 1px solid #4b4b4b;
     border-radius: 8px; /* 角丸を適用 */
@@ -128,7 +129,8 @@ textarea {
     height: 160px;
 }
 input[type="text"]::placeholder,
-input[type="email"]::placeholder {
+input[type="email"]::placeholder,
+input[type="number"]::placeholder {
     color: #aaa;
 }
 span{
@@ -144,7 +146,7 @@ span{
     border: none; /* 枠線なし */
     border-radius: 10px; /* 角丸 */
     padding: 10px 20px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 影 */
     font-size: 16px;
     cursor: pointer;
