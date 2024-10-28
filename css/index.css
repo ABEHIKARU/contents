@@ -386,6 +386,7 @@ footer{
     background-color: rgb(65, 182, 230);
     position:absolute;
     left: 0;
+    right: 0;
     width: 100%; /* 幅を画面いっぱいに */
     margin: 0 auto;
     box-sizing: border-box; /* パディングを含めた幅の計算 */
