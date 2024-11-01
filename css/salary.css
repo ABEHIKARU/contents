@@ -1,14 +1,17 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 /* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
     background-color: #eaf7fc;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* 最小の高さを設定 */
-    /* display: flex;  */
+    width: 1520px; /* 固定幅 */
+    margin: 0 auto; /* 中央揃え */
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
 }
 
 /* ヘッダーコンテナ */
@@ -120,6 +123,7 @@ body {
     justify-content: flex-start; /* 左揃え */
     align-items: flex-start; /* 上部揃えで位置を調整 */
     margin-top: 40px;
+    margin-bottom: 100px;
     padding-left: 0px; /* ステップ全体を少し左に移動 */
 }
 
@@ -192,14 +196,19 @@ body {
     padding-left: 30px; /* p要素を左にずらす */
 }
 /* フッター */
-.footer-container {
+footer{
     background-color: rgb(65, 182, 230);
+    position: fixed; /* フッターを固定 */
+    left: 0; /* 左側に配置 */
+    bottom: 0; /* 画面の一番下に配置 */
+    width: 100%; /* 幅を画面いっぱいに */
+    box-sizing: border-box; /* パディングを含めた幅の計算 */
+}
+.footer-container {
     color: white;
     text-align: center;
     padding: 20px;
-    width: 100%; /* 幅を100%に設定 */
-    box-sizing: border-box; /* パディングを含めた幅の計算 */
-    position: relative;
+    margin: 0 auto; /* 中央揃え（必要に応じて） */
 }
 
 .pagetop {

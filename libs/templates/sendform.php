@@ -42,7 +42,7 @@ $inquiry_detail = isset($_SESSION['inquiry_detail']) ? htmlspecialchars($_SESSIO
             </nav>
 
             <!-- 資料請求・お問い合わせボタン -->
-            <a href="inquery2.php" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
+            <a href="inquery.php" target="_blank" class="cta-button">資料請求・お問い合わせ</a>
         </div>
     </header>
 
@@ -53,16 +53,16 @@ $inquiry_detail = isset($_SESSION['inquiry_detail']) ? htmlspecialchars($_SESSIO
         <tr>
             <td>氏名(漢字)&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="text" id="name_sei" name="name_sei" value="<?php echo $name_sei; ?>" placeholder="姓" maxlength="20" required>
-                <input type="text" id="name_mei" name="name_mei" value="<?php echo $name_mei; ?>" placeholder="名" maxlength="20" required>
+                <input type="text" id="name_sei" name="name_sei" value="<?php echo $name_sei; ?>" pattern="[^\x20-\x7E]*" placeholder="姓" maxlength="20" required>
+                <input type="text" id="name_mei" name="name_mei" value="<?php echo $name_mei; ?>" pattern="[^\x20-\x7E]*" placeholder="名" maxlength="20" required>
             </td>
         </tr>
         
         <tr>
             <td>氏名(フリガナ)&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="text" id="kana_name_sei" name="kana_name_sei" value="<?php echo $kana_name_sei; ?>" placeholder="セイ" maxlength="20" required>
-                <input type="text" id="kana_name_mei" name="kana_name_mei" value="<?php echo $kana_name_mei; ?>" placeholder="メイ" maxlength="20" required>
+                <input type="text" id="kana_name_sei" name="kana_name_sei" pattern="[\u30A1-\u30FA\u30FC]+" value="<?php echo $kana_name_sei; ?>" placeholder="セイ" maxlength="20" required>
+                <input type="text" id="kana_name_mei" name="kana_name_mei" pattern="[\u30A1-\u30FA\u30FC]+" value="<?php echo $kana_name_mei; ?>" placeholder="メイ" maxlength="20" required>
             </td>
         </tr>
 
@@ -76,7 +76,7 @@ $inquiry_detail = isset($_SESSION['inquiry_detail']) ? htmlspecialchars($_SESSIO
         <tr>
             <td>電話番号(半角)&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="tel" id="tel_num" name="tel_num" value="<?php echo $tel_num; ?>" maxlength="15" required>
+                <input type="tel" id="tel_num" name="tel_num" value="<?php echo $tel_num; ?>" placeholder="ハイフンは不要です" maxlength="15" required>
             </td>
         </tr>
 
@@ -90,7 +90,7 @@ $inquiry_detail = isset($_SESSION['inquiry_detail']) ? htmlspecialchars($_SESSIO
         <tr>
             <td>利用予定人数&nbsp;<img src="img/hissu.png" class="hissu"></td>
             <td>
-                <input type="text" id="people_num" name="people_num" value="<?php echo $people_num; ?>" maxlength="10" required>人
+                <input type="number" id="people_num" name="people_num" value="<?php echo $people_num; ?>" maxlength="10" required>人
                 <span>※おおよその人数で構いません</span>
             </td>
         </tr>
@@ -129,7 +129,7 @@ $inquiry_detail = isset($_SESSION['inquiry_detail']) ? htmlspecialchars($_SESSIO
     </form>
     <footer>
         <div class="footer-container">
-            copyright©2024&nbsp;NIPS Co.,Ltd.&nbsp;all&nbsp;rights&nbsp;reserved.
+            copyright©2024&nbsp;NIPS SYSTEMCENTER Co.,Ltd.&nbsp;all&nbsp;rights&nbsp;reserved.
             <a class="pagetop" href="#">
                 <img src="img/up_arrow.png" alt="トップへ戻る" class="up_arrow">
             </a>

@@ -47,7 +47,7 @@
 	//--------sendmail------------
 
 	//メールの宛先
-	$mailTo = 'sc@nipssc.co.jp';
+	$mailTo = 'eigyo@nipssc.co.jp';
 
 	//Return-Pathに指定するメールアドレス
 	$returnMail = 'sc@nipssc.co.jp';

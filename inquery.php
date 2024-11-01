@@ -42,6 +42,6 @@
 
 <!-- 実行用リンク -->
 <!-- http://localhost/sasaetai/inquery.php -->
-
+ <!-- http://localhost/sasaetai/index.html -->
 <!-- 認証画像確認用 -->
 <!-- http://localhost/sasaetai/securimage/securimage_show.php -->

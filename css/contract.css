@@ -1,16 +1,18 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 /* 全体のスタイル */
 body {
     font-family: Arial, sans-serif;
     background-color: #eaf7fc;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* 最小の高さを設定 */
-    /* display: flex;  */
+    width: 1520px; /* 固定幅 */
+    margin: 0 auto; /* 中央揃え */
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 80px; /* ヘッダーの高さ分だけマージンを追加 */
 }
-
 /* ヘッダーコンテナ */
 .header-container {
     display: flex;
@@ -117,80 +119,47 @@ body {
 
 /* ステップのレイアウト */
 
-.steps {
+.container {
     display: flex;
-    justify-content: flex-start; /* 左揃え */
-    align-items: flex-start; /* 上部揃えで位置を調整 */
-    margin-top: 40px;
-    gap: 40px; /* 要素間の余白 */
-    padding-left: 0px; /* ステップ全体を少し左に移動 */
+    justify-content: center;
+    margin-bottom: 100px;
 }
 
-.step {
-    text-align: left; /* ステップ要素内を左揃え */
-    width: 28%; /* 各ステップの幅を調整して改行を防ぐ */
-    display: flex;
-    flex-direction: column; /* 要素を縦に並べる */
-    justify-content: flex-start; /* 上部から配置 */
-    align-items: flex-start; /* 左揃え */
+.block-container{
+    text-align: center;
 }
 
-.step p {
-    margin-bottom: 10px; /* 画像とテキストの間に少し余白を設定 */
-    margin-top: 0; /* 上の余白はなし */
-    white-space: nowrap; /* 改行を防ぐ */
-    overflow: hidden;
-    text-overflow: ellipsis; /* テキストが長すぎる場合は「...」を表示 */
-    padding-left: 0px; /* p要素を左にずらす */
-    font-weight: bold; /* テキストを濃くする */
+.block-container p {
+    padding-left: 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-
-
-/* 画像サイズを個別に調整可能にする */
-.step img {
-    width: 100%; /* 幅を親要素に合わせて調整 */
-    height: auto; /* 高さをアスペクト比を維持しながら自動調整 */
-    max-width: 400px; /* 必要に応じて最大幅を設定 */
-    max-height: 400px; /* 必要に応じて最大高さを設定 */
-    margin-top: 10px; /* 画像の上に少し余白を設定 */
+.block-container img{
+    height: 200px;
+    width: auto;
 }
 
-/* 矢印のスタイル（個別に調整可能に） */
-.arrow {
-    width: 140px; /* 矢印の幅を初期値として設定 */
-    height: 120px; /* 高さは自動調整 */
-    display: block;
-    margin: 30px 0 30px 30px; /* 矢印の左右に余白を追加 */
-    padding: 0; /* 矢印の余白をリセット */
-    max-width: 140px; /* 最大幅 */
-    max-height: 120px; /* 最大高さ */
+.arrow-container img {
+   width: 100px;
+   height: auto;
+   margin-top: 150px;
 }
 
-/* 矢印のサイズを個別に拡大可能に */
-.arrow img {
-    width: 150%; /* 親要素に合わせて幅を調整 */
-    height: auto; /* 高さをアスペクト比に基づいて自動調整 */
-    max-width: 100px; /* 必要に応じて最大幅を設定 */
-    max-height: 100px; /* 必要に応じて最大高さを設定 */
-}
-
-/* 画像サイズを統一するためのスタイル */
-.image-standard {
-    width: 200px; /* 画像の幅を200pxに統一 */
-    height: auto; /* 高さは自動調整 */
-    object-fit: contain; /* アスペクト比を維持しながら表示 */
-    margin: 10px; /* 画像間に余白を追加 */
-}
 /* フッター */
-.footer-container {
+footer{
     background-color: rgb(65, 182, 230);
+    position: fixed; /* フッターを固定 */
+    left: 0; /* 左側に配置 */
+    bottom: 0; /* 画面の一番下に配置 */
+    width: 100%; /* 幅を画面いっぱいに */
+    box-sizing: border-box; /* パディングを含めた幅の計算 */
+}
+.footer-container {
     color: white;
     text-align: center;
     padding: 20px;
-    width: 100%; /* 幅を100%に設定 */
-    box-sizing: border-box; /* パディングを含めた幅の計算 */
-    position: relative;
+    margin: 0 auto; /* 中央揃え（必要に応じて） */
 }
 
 .pagetop {
